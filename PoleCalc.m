@@ -5,14 +5,14 @@ r = 5;                                  %bore radius
 NumPoles = 2;                          %number of poles
 Steps = 1000;
 fringe = 0;                           %fringe angle
-NumCoils = 1;                          %number of coils
+NumCoils = 3;                          %number of coils
 z = NumPoles/2;                         %coefficient to make sine zero at theta = 0 and theta = t_2
 phi = pi/(NumCoils);                  %angle between coil centers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 t_2 = ((2*pi)/NumPoles) - fringe;      %angle subtended by magnet
-c_angle = (2*pi)/(NumCoils);             %angle subtended by coil
+c_angle = (4*pi)/(NumCoils);             %angle subtended by coil
 t_step = (2*pi)/Steps;                 %increment step size for theta/tau
 Const = (R^2 - r^2)*(c_angle/2);       %constant value
 F = zeros(Steps + 1,NumPoles + NumCoils,NumCoils);
